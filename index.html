@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>318 LEGAACY STUDIO - Studio d'Enregistrement Professionnel Ã  Pantin</title>
+    <meta name="description" content="318 LEGAACY STUDIO offre une qualitÃ© sonore exceptionnelle pour artistes, musiciens et crÃ©ateurs Ã  Pantin.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==================== CSS VARIABLES ==================== */
+        :root {
+            --primary-red: #C41E1E;
+            --dark-bg: #0f0f0f;
+            --darker-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-light: #ffffff;
+            --text-secondary: #cccccc;
+            --border-color: #333333;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ==================== GLOBAL STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        /* ==================== HEADER/NAVIGATION ==================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background-color: rgba(15, 15, 15, 0.95);
+            border-bottom-color: var(--border-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary-red);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-red);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-reserve {
+            background-color: var(--primary-red);
+            color: var(--text-light);
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-red);
+            cursor: pointer;
+        }
+
+        .btn-reserve:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(196, 30, 30, 0.3);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(196, 30, 30, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .hero h1 span {
+            color: var(--primary-red);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: var(--text-light);
+            border: 2px solid var(--primary-red);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(196, 30, 30, 0.4);
+        }
+
+        .btn-primary {
+            transition: var(--transition);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--text-light);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--text-light);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .service-card:hover {
+            background-color: rgba(196, 30, 30, 0.05);
+            border-color: var(--primary-red);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ==================== PRICING SECTION ==================== */
+        .pricing {
+            padding: 6rem 2rem;
+            background-color: var(--darker-bg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .pricing-card:nth-child(1) { animation-delay: 0.1s; }
+        .pricing-card:nth-child(2) { animation-delay: 0.2s; }
+        .pricing-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .pricing-card.popular {
+            border-color: var(--primary-red);
+            background: linear-gradient(135deg, rgba(196, 30, 30, 0.1) 0%, var(--card-bg) 100%);
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary-red);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-6px);
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .pricing-amount {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-duration {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.7rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .pricing-features li::before {
+            content: 'â';
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== POST-PRODUCTION CARDS ==================== */
+        .post-production-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .post-production-card {
+            background-color: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(51, 51, 51, 0.8);
+            transition: var(--transition);
+        }
+
+        .post-production-card:hover {
+            border-color: var(--primary-red);
+            background-color: rgba(26, 26, 26, 0.95);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        /* ==================== RESERVATION SECTION ==================== */
+        .reservation {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(196, 30, 30, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-note {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 2rem;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background-color: var(--primary-red);
+            color: var(--text-light);
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+
+        .form-submit:hover {
+            background-color: #a01818;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(196, 30, 30, 0.4);
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            padding: 6rem 2rem;
+            background-color: var(--darker-bg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-info {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .contact-item {
+            margin-bottom: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            min-width: 24px;
+            margin-top: 0.3rem;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .contact-details a {
+            color: var(--primary-red);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            color: var(--primary-red);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid var(--border-color);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-red);
+            color: var(--text-light);
+            transform: translateY(-3px);
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container iframe {
+                height: 400px;
+            }
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background-color: var(--darker-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                margin-top: 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .services,
+            .pricing,
+            .reservation,
+            .contact {
+                padding: 4rem 1.5rem;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .pricing-amount {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .services-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== FORM VALIDATION ==================== */
+        .form-group.error input,
+        .form-group.error select,
+        .form-group.error textarea {
+            border-color: var(--primary-red);
+        }
+
+        .error-message {
+            color: var(--primary-red);
+            font-size: 0.85rem;
+            margin-top: 0.4rem;
+            display: none;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        /* ==================== CONFIRMATION MESSAGE ==================== */
+        .confirmation-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .confirmation-modal.show {
+            display: flex;
+        }
+
+        .confirmation-content {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid var(--primary-red);
+            max-width: 500px;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .confirmation-content h2 {
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .confirmation-content p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .confirmation-close {
+            background-color: var(--primary-red);
+            color: var(--text-light);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .confirmation-close:hover {
+            background-color: #a01818;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER/NAVIGATION -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <span>318</span> LEGAACY STUDIO
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Tarifs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#reservation" class="btn-reserve">RÃ©server</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Studio d'enregistrement professionnel Ã  <span>Pantin</span></h1>
+            <p class="hero-subtitle">318 LEGAACY STUDIO offre une qualitÃ© sonore exceptionnelle pour artistes, musiciens et crÃ©ateurs. RÃ©servez votre session dÃ¨s aujourd'hui et donnez vie Ã  votre vision.</p>
+            <div class="hero-buttons">
+                <a href="#reservation" class="btn btn-primary">RÃ©server une Session</a>
+                <a href="#contact" class="btn btn-secondary">Nous Contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <h2 class="section-title">Nos Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-microphone"></i></div>
+                <h3>Enregistrement</h3>
+                <p>Studio professionnel avec un Ã©quipement de pointe pour capturer votre meilleure performance audio.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h3>Mixage</h3>
+                <p>Des ingÃ©nieurs du son expÃ©rimentÃ©s pour Ã©quilibrer et amÃ©liorer vos pistes avec prÃ©cision.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-waveform-lines"></i></div>
+                <h3>Mastering</h3>
+                <p>Mastering professionnel compatible avec tous les systÃ¨mes de lecture pour une qualitÃ© optimale.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-music"></i></div>
+                <h3>Production Musicale</h3>
+                <p>Accompagnement complet dans votre crÃ©ation musicale du concept Ã  la finalisation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Tarifs Simples et Transparents</h2>
+
+        <!-- Session Studio Pricing -->
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3 class="pricing-title">Session Studio</h3>
+                <div class="pricing-amount">35â¬</div>
+                <div class="pricing-duration">par heure (minimum 2h)</div>
+                <ul class="pricing-features">
+                    <li>Minimum 2 heures de rÃ©servation</li>
+                    <li>IngÃ©nieur du son professionnel inclus</li>
+                    <li>Ãquipement de pointe</li>
+                    <li>Salle de prise et cabine d'isolation</li>
+                    <li>4 personnes incluses</li>
+                </ul>
+                <a href="#reservation" class="btn btn-primary" style="width: 100%;">RÃ©server</a>
+            </div>
+
+            <div class="pricing-card popular">
+                <div class="pricing-badge">Le Plus Populaire</div>
+                <h3 class="pricing-title">Pack 3h</h3>
+                <div class="pricing-amount">105â¬</div>
+                <div class="pricing-duration">3 heures</div>
+                <ul class="pricing-features">
+                    <li>3 heures de studio</li>
+                    <li>IngÃ©nieur du son dÃ©diÃ©</li>
+                    <li>Session de mixage avancÃ©e</li>
+                    <li>Multiples prises et montages</li>
+                    <li>4 personnes incluses</li>
+                </ul>
+                <a href="#reservation" class="btn btn-primary" style="width: 100%;">RÃ©server 3h</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3 class="pricing-title">Pack JournÃ©e</h3>
+                <div class="pricing-amount">210â¬</div>
+                <div class="pricing-duration">6 heures</div>
+                <ul class="pricing-features">
+                    <li>6 heures de studio</li>
+                    <li>IngÃ©nieur du son dÃ©diÃ©</li>
+                    <li>Mixing et mastering complets</li>
+                    <li>Prises et montages illimitÃ©s</li>
+                    <li>4 personnes incluses</li>
+                </ul>
+                <a href="#reservation" class="btn btn-primary" style="width: 100%;">RÃ©server 6h</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3 class="pricing-title">Pack JournÃ©e ComplÃ¨te</h3>
+                <div class="pricing-amount">300â¬</div>
+                <div class="pricing-duration">10 heures</div>
+                <ul class="pricing-features">
+                    <li>10 heures de studio</li>
+                    <li>IngÃ©nieur du son dÃ©diÃ©</li>
+                    <li>Mixing et mastering complets</li>
+                    <li>Prises et montages illimitÃ©s</li>
+                    <li>4 personnes incluses</li>
+                    <li>Consultation de projet</li>
+                </ul>
+                <a href="#reservation" class="btn btn-primary" style="width: 100%;">RÃ©server 10h</a>
+            </div>
+        </div>
+
+        <div class="pricing-note">
+            <i class="fas fa-info-circle"></i> Personne supplÃ©mentaire : +15â¬ | Paiement en ligne sÃ©curisÃ© par Stripe
+        </div>
+
+        <!-- Post-Production Services -->
+        <div style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border-color);">
+            <h3 class="section-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Services Post-Production</h3>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.1rem;">Mixage & Mastering</p>
+
+            <div class="pricing-grid post-production-grid">
+                <div class="pricing-card post-production-card">
+                    <h3 class="pricing-title">Mixage (Pistes WAV/MP3)</h3>
+                    <div class="pricing-amount">150â¬</div>
+                    <div class="pricing-duration">par titre</div>
+                    <ul class="pricing-features">
+                        <li>Mixage professionnel</li>
+                        <li>Pistes WAV et MP3</li>
+                        <li>Livraison format numÃ©rique</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Demander un devis</a>
+                </div>
+
+                <div class="pricing-card post-production-card">
+                    <h3 class="pricing-title">Mixage (Stems)</h3>
+                    <div class="pricing-amount">250â¬</div>
+                    <div class="pricing-duration">par titre</div>
+                    <ul class="pricing-features">
+                        <li>Mixage professionnel</li>
+                        <li>Pistes instruments sÃ©parÃ©es (stems)</li>
+                        <li>Rendu haute qualitÃ©</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Demander un devis</a>
+                </div>
+
+                <div class="pricing-card post-production-card">
+                    <h3 class="pricing-title">Mastering</h3>
+                    <div class="pricing-amount">100â¬</div>
+                    <div class="pricing-duration">par titre</div>
+                    <ul class="pricing-features">
+                        <li>Mastering professionnel</li>
+                        <li>Compatible tous supports</li>
+                        <li>Livraison format numÃ©rique</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Demander un devis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESERVATION SECTION -->
+    <section class="reservation" id="reservation">
+        <h2 class="section-title">RÃ©servez Votre Session</h2>
+        <form id="reservationForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">Nom Complet</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                    <span class="error-message">Veuillez entrer votre nom complet</span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">NumÃ©ro de TÃ©lÃ©phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span class="error-message">Veuillez entrer un numÃ©ro de tÃ©lÃ©phone valide</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message">Veuillez entrer une adresse email valide</span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sessionType">Type de Session</label>
+                    <select id="sessionType" name="sessionType" required>
+                        <option value="">-- SÃ©lectionner (minimum 2h) --</option>
+                        <option value="2h-70">2h - 70â¬</option>
+                        <option value="3h-105">3h - 105â¬</option>
+                        <option value="4h-140">4h - 140â¬</option>
+                        <option value="5h-175">5h - 175â¬</option>
+                        <option value="6h-210">6h - 210â¬</option>
+                        <option value="7h-245">7h - 245â¬</option>
+                        <option value="8h-280">8h - 280â¬</option>
+                        <option value="9h-315">9h - 315â¬</option>
+                        <option value="10h-300">10h - 300â¬ (Pack JournÃ©e)</option>
+                    </select>
+                    <span class="error-message">Veuillez sÃ©lectionner un type de session</span>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date SouhaitÃ©e</label>
+                    <input type="date" id="date" name="date" required>
+                    <span class="error-message">Veuillez sÃ©lectionner une date</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="timeSlot">CrÃ©neau Horaire</label>
+                    <select id="timeSlot" name="timeSlot" required>
+                        <option value="">-- SÃ©lectionner --</option>
+                        <option value="10h-12h">10h00 - 12h00</option>
+                        <option value="12h-14h">12h00 - 14h00</option>
+                        <option value="14h-16h">14h00 - 16h00</option>
+                        <option value="16h-18h">16h00 - 18h00</option>
+                        <option value="18h-20h">18h00 - 20h00</option>
+                        <option value="20h-22h">20h00 - 22h00</option>
+                        <option value="22h-00h">22h00 - 00h00</option>
+                        <option value="00h-02h">00h00 - 02h00</option>
+                    </select>
+                    <span class="error-message">Veuillez sÃ©lectionner un crÃ©neau</span>
+                </div>
+                <div class="form-group">
+                    <label for="people">Nombre de Personnes</label>
+                    <select id="people" name="people" required>
+                        <option value="">-- SÃ©lectionner --</option>
+                        <option value="1-4">1-4 (inclus)</option>
+                        <option value="5">5 (+15â¬)</option>
+                        <option value="6">6 (+30â¬)</option>
+                        <option value="7">7 (+45â¬)</option>
+                    </select>
+                    <span class="error-message">Veuillez sÃ©lectionner le nombre de personnes</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message / Notes (Optionnel)</label>
+                <textarea id="message" name="message" placeholder="Parlez-nous de votre projet..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Confirmer et Payer</button>
+            <p class="form-note">Vous serez redirigÃ© vers notre page de paiement sÃ©curisÃ©e Stripe</p>
+        </form>
+    </section>
+
+    <!-- CUSTOM PACKAGE SECTION -->
+    <section class="contact" style="padding-top: 4rem; border-top: 1px solid var(--border-color);">
+        <h2 class="section-title">Besoin de quelque chose de personnalisÃ© ?</h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 3rem; font-size: 1.05rem; line-height: 1.8;">Nous proposons des packages flexibles pour les projets plus importants, les enregistrements d'albums et les collaborations Ã  long terme.</p>
+        <div style="text-align: center;">
+            <a href="#contact" class="btn btn-primary">Nous contacter pour un devis personnalisÃ©</a>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Nous Contacter</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-details">
+                        <h3>Adresse</h3>
+                        <p>100 Avenue du GÃ©nÃ©ral Leclerc<br>93500 Pantin, France</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p><a href="mailto:studiolegaacy@gmail.com">studiolegaacy@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div class="contact-details">
+                        <h3>Horaires</h3>
+                        <p>Ouvert 7j/7<br>10h00 - 06h00</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-heart"></i></div>
+                    <div class="contact-details">
+                        <h3>Suivez-nous</h3>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/318legaacystudio/" target="_blank" class="social-link" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2610.9919090282256!2d2.3956!3d48.8923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e612de72f3c3e7%3A0x1d1e1e1e1e1e1e1e!2s100%20Avenue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2093500%20Pantin!5e0!3m2!1sfr!2sfr!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-copyright">
+                Â© 2025 318 LEGAACY STUDIO. Tous droits rÃ©servÃ©s.
+            </div>
+            <div class="footer-links">
+                <a href="#privacy">Politique de ConfidentialitÃ©</a>
+                <a href="#terms">Conditions GÃ©nÃ©rales</a>
+                <a href="#refund">Politique de Remboursement</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CONFIRMATION MODAL -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <h2>â RÃ©servation ConfirmÃ©e!</h2>
+            <p>Merci de votre rÃ©servation. Un email de confirmation avec les dÃ©tails de votre session a Ã©tÃ© envoyÃ© Ã  votre adresse email. Vous serez redirigÃ© vers le paiement sÃ©curisÃ© Stripe.</p>
+            <button class="confirmation-close" onclick="closeConfirmation()">Fermer</button>
+        </div>
+    </div>
+
+    <script>
+        // ==================== SMOOTH SCROLLING & HEADER SCROLL ====================
+        let header = document.getElementById('header');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // ==================== FORM VALIDATION ====================
+        const form = document.getElementById('reservationForm');
+        const fullNameInput = document.getElementById('fullName');
+        const phoneInput = document.getElementById('phone');
+        const emailInput = document.getElementById('email');
+        const sessionTypeSelect = document.getElementById('sessionType');
+        const dateInput = document.getElementById('date');
+        const timeSlotSelect = document.getElementById('timeSlot');
+        const peopleSelect = document.getElementById('people');
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validatePhone(phone) {
+            const re = /^[0-9\s\-\+\(\)]{8,}$/;
+            return re.test(phone.replace(/\s/g, ''));
+        }
+
+        function showError(input) {
+            input.parentElement.classList.add('error');
+        }
+
+        function clearError(input) {
+            input.parentElement.classList.remove('error');
+        }
+
+        // Real-time validation
+        fullNameInput.addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+                showError(this);
+            } else {
+                clearError(this);
+            }
+        });
+
+        phoneInput.addEventListener('blur', function() {
+            if (!validatePhone(this.value)) {
+                showError(this);
+            } else {
+                clearError(this);
+            }
+        });
+
+        emailInput.addEventListener('blur', function() {
+            if (!validateEmail(this.value)) {
+                showError(this);
+            } else {
+                clearError(this);
+            }
+        });
+
+        // ==================== FORM SUBMISSION ====================
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Validate all fields
+            let isValid = true;
+
+            if (fullNameInput.value.trim() === '') {
+                showError(fullNameInput);
+                isValid = false;
+            } else {
+                clearError(fullNameInput);
+            }
+
+            if (!validatePhone(phoneInput.value)) {
+                showError(phoneInput);
+                isValid = false;
+            } else {
+                clearError(phoneInput);
+            }
+
+            if (!validateEmail(emailInput.value)) {
+                showError(emailInput);
+                isValid = false;
+            } else {
+                clearError(emailInput);
+            }
+
+            if (sessionTypeSelect.value === '') {
+                showError(sessionTypeSelect);
+                isValid = false;
+            } else {
+                clearError(sessionTypeSelect);
+            }
+
+            if (dateInput.value === '') {
+                showError(dateInput);
+                isValid = false;
+            } else {
+                clearError(dateInput);
+            }
+
+            if (timeSlotSelect.value === '') {
+                showError(timeSlotSelect);
+                isValid = false;
+            } else {
+                clearError(timeSlotSelect);
+            }
+
+            if (peopleSelect.value === '') {
+                showError(peopleSelect);
+                isValid = false;
+            } else {
+                clearError(peopleSelect);
+            }
+
+            if (isValid) {
+                // Show confirmation modal
+                showConfirmation();
+
+                // In production, this would redirect to Stripe payment link
+                // window.location.href = 'https://buy.stripe.com/your-link';
+
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    form.reset();
+                }, 2000);
+            }
+        });
+
+        // ==================== CONFIRMATION MODAL ====================
+        function showConfirmation() {
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.add('show');
+        }
+
+        function closeConfirmation() {
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('confirmationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeConfirmation();
+            }
+        });
+
+        // ==================== INTERSECTION OBSERVER FOR ANIMATIONS ====================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and pricing cards
+        document.querySelectorAll('.service-card, .pricing-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ==================== MOBILE MENU (if needed for smaller screens) ====================
+        // This is a foundation for future mobile menu implementation
+    </script>
+</body>
+</html>
