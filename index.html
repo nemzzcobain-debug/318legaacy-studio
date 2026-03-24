@@ -1378,7 +1378,7 @@
                     <li>Salle de prise et cabine d'isolation</li>
                     <li>4 personnes incluses</li>
                 </ul>
-                <a href="https://buy.stripe.com/test_placeholder_2h" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver</a>
+                <a href="https://calendly.com/legaacystudio" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver</a>
             </div>
 
             <div class="pricing-card popular">
@@ -1393,7 +1393,7 @@
                     <li>Multiples prises et montages</li>
                     <li>4 personnes incluses</li>
                 </ul>
-                <a href="https://buy.stripe.com/test_placeholder_3h" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver 3h</a>
+                <a href="https://calendly.com/legaacystudio" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver 3h</a>
             </div>
 
             <div class="pricing-card">
@@ -1407,7 +1407,7 @@
                     <li>Prises et montages illimités</li>
                     <li>4 personnes incluses</li>
                 </ul>
-                <a href="https://buy.stripe.com/test_placeholder_6h" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver 6h</a>
+                <a href="https://calendly.com/legaacystudio" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver 6h</a>
             </div>
 
             <div class="pricing-card">
@@ -1422,7 +1422,7 @@
                     <li>4 personnes incluses</li>
                     <li>Consultation de projet</li>
                 </ul>
-                <a href="https://buy.stripe.com/test_placeholder_10h" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver 10h</a>
+                <a href="https://calendly.com/legaacystudio" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver 10h</a>
             </div>
         </div>
 
@@ -1557,8 +1557,8 @@
                     <textarea id="message" name="message" placeholder="Parlez-nous de votre projet..."></textarea>
                 </div>
 
-                <button type="submit" class="form-submit">Continuer vers le paiement</button>
-                <p class="form-note">Vous serez redirigé vers notre page de paiement sécurisée Stripe</p>
+                <button type="submit" class="form-submit">Réserver sur Calendly</button>
+                <p class="form-note">Vous serez redirigé vers notre page de réservation Calendly</p>
             </form>
 
             <!-- Order Summary Panel -->
@@ -1733,9 +1733,9 @@
                 <p><strong>Personnes :</strong> <span id="confirmPeople"></span></p>
                 <p><strong>Total à payer :</strong> <span id="confirmTotal"></span></p>
             </div>
-            <p>Un email de confirmation a été envoyé à votre adresse email. Vous allez maintenant être redirigé vers le paiement sécurisé Stripe.</p>
+            <p>Un email de confirmation a été envoyé à votre adresse email. Vous allez maintenant être redirigé vers Calendly pour confirmer votre créneau.</p>
             <div class="confirmation-buttons">
-                <a href="" id="stripeLink" class="confirmation-stripe">Aller au paiement Stripe</a>
+                <a href="" id="stripeLink" class="confirmation-stripe">Réserver sur Calendly</a>
                 <button class="confirmation-close" onclick="closeConfirmation()">Fermer</button>
             </div>
         </div>
@@ -1973,16 +1973,16 @@
                 let stripeLink = '';
 
                 if (sessionType.includes('2h')) {
-                    stripeLink = 'https://buy.stripe.com/test_placeholder_2h';
+                    stripeLink = 'https://calendly.com/legaacystudio';
                 } else if (sessionType.includes('3h')) {
-                    stripeLink = 'https://buy.stripe.com/test_placeholder_3h';
+                    stripeLink = 'https://calendly.com/legaacystudio';
                 } else if (sessionType.includes('6h')) {
-                    stripeLink = 'https://buy.stripe.com/test_placeholder_6h';
+                    stripeLink = 'https://calendly.com/legaacystudio';
                 } else if (sessionType.includes('10h')) {
-                    stripeLink = 'https://buy.stripe.com/test_placeholder_10h';
+                    stripeLink = 'https://calendly.com/legaacystudio';
                 } else {
                     // For other durations, use the 3h link as default
-                    stripeLink = 'https://buy.stripe.com/test_placeholder_3h';
+                    stripeLink = 'https://calendly.com/legaacystudio';
                 }
 
                 // Show confirmation modal
