@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>318 LEGAACY STUDIO - Studio d'Enregistrement Professionnel Ã  Pantin</title>
-    <meta name="description" content="318 LEGAACY STUDIO offre une qualitÃ© sonore exceptionnelle pour artistes, musiciens et crÃ©ateurs Ã  Pantin.">
+    <title>318 LEGAACY STUDIO - Studio d'Enregistrement Professionnel à Pantin</title>
+    <meta name="description" content="318 LEGAACY STUDIO offre une qualité sonore exceptionnelle pour artistes, musiciens et créateurs à Pantin.">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -145,6 +145,80 @@
             box-shadow: 0 8px 20px rgba(196, 30, 30, 0.3);
         }
 
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger-menu span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background-color: rgba(15, 15, 15, 0.98);
+            border-bottom: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            z-index: 999;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-red);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* ==================== HERO SECTION ==================== */
         .hero {
             min-height: 100vh;
@@ -246,6 +320,56 @@
             box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
         }
 
+        /* ==================== HOW IT WORKS SECTION ==================== */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background-color: var(--darker-bg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            color: var(--text-light);
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
         /* ==================== SERVICES SECTION ==================== */
         .services {
             padding: 6rem 2rem;
@@ -334,6 +458,7 @@
         .pricing-card:nth-child(1) { animation-delay: 0.1s; }
         .pricing-card:nth-child(2) { animation-delay: 0.2s; }
         .pricing-card:nth-child(3) { animation-delay: 0.3s; }
+        .pricing-card:nth-child(4) { animation-delay: 0.4s; }
 
         .pricing-card.popular {
             border-color: var(--primary-red);
@@ -398,7 +523,7 @@
         }
 
         .pricing-features li::before {
-            content: 'â';
+            content: '✓';
             color: var(--primary-red);
             font-weight: 700;
             font-size: 1.2rem;
@@ -437,8 +562,15 @@
         .reservation {
             padding: 6rem 2rem;
             background-color: var(--dark-bg);
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
+        }
+
+        .reservation-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: flex-start;
         }
 
         .form-group {
@@ -512,6 +644,210 @@
             background-color: #a01818;
             transform: translateY(-2px);
             box-shadow: 0 12px 30px rgba(196, 30, 30, 0.4);
+        }
+
+        /* Order Summary Panel */
+        .order-summary {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2rem;
+            position: sticky;
+            top: 100px;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .order-summary h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .summary-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .summary-item.total {
+            border-top: 2px solid var(--primary-red);
+            border-bottom: none;
+            padding-top: 1.5rem;
+            padding-bottom: 0;
+            margin-top: 1rem;
+        }
+
+        .summary-item.total span:first-child {
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .summary-item.total span:last-child {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .summary-empty {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 1.5rem 0;
+            font-style: italic;
+        }
+
+        .payment-options {
+            margin-top: 2rem;
+            border-top: 2px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        .payment-options h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .payment-option {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .payment-option input[type="radio"] {
+            cursor: pointer;
+            margin-top: 0.3rem;
+        }
+
+        .payment-option label {
+            margin: 0;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== FAQ SECTION ==================== */
+        .faq {
+            padding: 6rem 2rem;
+            background-color: var(--darker-bg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .faq-item:nth-child(1) { animation-delay: 0.1s; }
+        .faq-item:nth-child(2) { animation-delay: 0.2s; }
+        .faq-item:nth-child(3) { animation-delay: 0.3s; }
+        .faq-item:nth-child(4) { animation-delay: 0.4s; }
+        .faq-item:nth-child(5) { animation-delay: 0.5s; }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            background-color: var(--card-bg);
+        }
+
+        .faq-question:hover {
+            background-color: rgba(196, 30, 30, 0.05);
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            color: var(--primary-red);
+            font-size: 1.3rem;
+            transition: var(--transition);
+            margin-left: 1rem;
+        }
+
+        .faq-question.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: rgba(196, 30, 30, 0.05);
+        }
+
+        .faq-answer.show {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ==================== WHATSAPP BUTTON ==================== */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: var(--transition);
+            z-index: 999;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ==================== CONTACT SECTION ==================== */
@@ -684,6 +1020,14 @@
             nav ul {
                 gap: 1.5rem;
             }
+
+            .reservation-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .order-summary {
+                position: static;
+            }
         }
 
         @media (max-width: 768px) {
@@ -696,12 +1040,19 @@
             }
 
             nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
+                display: none;
             }
 
-            nav a {
-                font-size: 0.85rem;
+            .hamburger-menu {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.show {
+                display: block;
             }
 
             .hero {
@@ -729,7 +1080,9 @@
             .services,
             .pricing,
             .reservation,
-            .contact {
+            .contact,
+            .how-it-works,
+            .faq {
                 padding: 4rem 1.5rem;
             }
 
@@ -751,6 +1104,22 @@
             .footer-links {
                 justify-content: center;
             }
+
+            .whatsapp-button {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+            }
+
+            .steps-grid {
+                gap: 2rem;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -766,16 +1135,13 @@
                 font-size: 2rem;
             }
 
-            nav ul {
-                display: none;
-            }
-
             .logo {
                 font-size: 1rem;
             }
 
             .services-grid,
-            .pricing-grid {
+            .pricing-grid,
+            .post-production-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -810,6 +1176,7 @@
             z-index: 2000;
             justify-content: center;
             align-items: center;
+            padding: 2rem;
         }
 
         .confirmation-modal.show {
@@ -834,8 +1201,34 @@
 
         .confirmation-content p {
             color: var(--text-secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             line-height: 1.8;
+        }
+
+        .confirmation-details {
+            background-color: rgba(196, 30, 30, 0.1);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+            text-align: left;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .confirmation-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .confirmation-details p strong {
+            color: var(--text-light);
+        }
+
+        .confirmation-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .confirmation-close {
@@ -852,6 +1245,24 @@
         .confirmation-close:hover {
             background-color: #a01818;
         }
+
+        .confirmation-stripe {
+            background-color: transparent;
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .confirmation-stripe:hover {
+            background-color: var(--primary-red);
+            color: var(--text-light);
+        }
     </style>
 </head>
 <body>
@@ -861,26 +1272,64 @@
             <div class="logo">
                 <span>318</span> LEGAACY STUDIO
             </div>
-            <nav>
+            <nav id="nav">
                 <ul>
                     <li><a href="#home">Accueil</a></li>
+                    <li><a href="#how-it-works">Comment ça marche</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#pricing">Tarifs</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#reservation" class="btn-reserve">RÃ©server</a></li>
+                    <li><a href="#reservation" class="btn-reserve">Réserver</a></li>
                 </ul>
             </nav>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#how-it-works">Comment ça marche</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Tarifs</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#reservation" class="btn-reserve">Réserver</a></li>
+            </ul>
         </div>
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Studio d'enregistrement professionnel Ã  <span>Pantin</span></h1>
-            <p class="hero-subtitle">318 LEGAACY STUDIO offre une qualitÃ© sonore exceptionnelle pour artistes, musiciens et crÃ©ateurs. RÃ©servez votre session dÃ¨s aujourd'hui et donnez vie Ã  votre vision.</p>
+            <h1>Studio d'enregistrement professionnel à <span>Pantin</span></h1>
+            <p class="hero-subtitle">318 LEGAACY STUDIO offre une qualité sonore exceptionnelle pour artistes, musiciens et créateurs. Réservez votre session dès aujourd'hui et donnez vie à votre vision.</p>
             <div class="hero-buttons">
-                <a href="#reservation" class="btn btn-primary">RÃ©server une Session</a>
+                <a href="#reservation" class="btn btn-primary">Réserver une Session</a>
                 <a href="#contact" class="btn btn-secondary">Nous Contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">Comment ça marche</h2>
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Choisir votre formule</h3>
+                <p>Sélectionnez le package qui correspond à votre projet et vos besoins en studio.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Réserver en ligne</h3>
+                <p>Remplissez notre formulaire de réservation avec vos préférences de date et d'heure.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Payer et confirmer</h3>
+                <p>Effectuez le paiement sécurisé et recevez votre confirmation par email.</p>
             </div>
         </div>
     </section>
@@ -892,22 +1341,22 @@
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-microphone"></i></div>
                 <h3>Enregistrement</h3>
-                <p>Studio professionnel avec un Ã©quipement de pointe pour capturer votre meilleure performance audio.</p>
+                <p>Studio professionnel avec un équipement de pointe pour capturer votre meilleure performance audio.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
                 <h3>Mixage</h3>
-                <p>Des ingÃ©nieurs du son expÃ©rimentÃ©s pour Ã©quilibrer et amÃ©liorer vos pistes avec prÃ©cision.</p>
+                <p>Des ingénieurs du son expérimentés pour équilibrer et améliorer vos pistes avec précision.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-waveform-lines"></i></div>
                 <h3>Mastering</h3>
-                <p>Mastering professionnel compatible avec tous les systÃ¨mes de lecture pour une qualitÃ© optimale.</p>
+                <p>Mastering professionnel compatible avec tous les systèmes de lecture pour une qualité optimale.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-music"></i></div>
                 <h3>Production Musicale</h3>
-                <p>Accompagnement complet dans votre crÃ©ation musicale du concept Ã  la finalisation.</p>
+                <p>Accompagnement complet dans votre création musicale du concept à la finalisation.</p>
             </div>
         </div>
     </section>
@@ -919,66 +1368,66 @@
         <!-- Session Studio Pricing -->
         <div class="pricing-grid">
             <div class="pricing-card">
-                <h3 class="pricing-title">Session Studio</h3>
-                <div class="pricing-amount">35â¬</div>
-                <div class="pricing-duration">par heure (minimum 2h)</div>
+                <h3 class="pricing-title">Formule 2h</h3>
+                <div class="pricing-amount">70€</div>
+                <div class="pricing-duration">2 heures</div>
                 <ul class="pricing-features">
-                    <li>Minimum 2 heures de rÃ©servation</li>
-                    <li>IngÃ©nieur du son professionnel inclus</li>
-                    <li>Ãquipement de pointe</li>
+                    <li>2 heures de studio</li>
+                    <li>Ingénieur du son professionnel inclus</li>
+                    <li>Équipement de pointe</li>
                     <li>Salle de prise et cabine d'isolation</li>
                     <li>4 personnes incluses</li>
                 </ul>
-                <a href="#reservation" class="btn btn-primary" style="width: 100%;">RÃ©server</a>
+                <a href="https://buy.stripe.com/test_placeholder_2h" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver</a>
             </div>
 
             <div class="pricing-card popular">
                 <div class="pricing-badge">Le Plus Populaire</div>
                 <h3 class="pricing-title">Pack 3h</h3>
-                <div class="pricing-amount">105â¬</div>
+                <div class="pricing-amount">105€</div>
                 <div class="pricing-duration">3 heures</div>
                 <ul class="pricing-features">
                     <li>3 heures de studio</li>
-                    <li>IngÃ©nieur du son dÃ©diÃ©</li>
-                    <li>Session de mixage avancÃ©e</li>
+                    <li>Ingénieur du son dédié</li>
+                    <li>Session de mixage avancée</li>
                     <li>Multiples prises et montages</li>
                     <li>4 personnes incluses</li>
                 </ul>
-                <a href="#reservation" class="btn btn-primary" style="width: 100%;">RÃ©server 3h</a>
+                <a href="https://buy.stripe.com/test_placeholder_3h" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver 3h</a>
             </div>
 
             <div class="pricing-card">
-                <h3 class="pricing-title">Pack JournÃ©e</h3>
-                <div class="pricing-amount">210â¬</div>
+                <h3 class="pricing-title">Pack Journée</h3>
+                <div class="pricing-amount">210€</div>
                 <div class="pricing-duration">6 heures</div>
                 <ul class="pricing-features">
                     <li>6 heures de studio</li>
-                    <li>IngÃ©nieur du son dÃ©diÃ©</li>
+                    <li>Ingénieur du son dédié</li>
                     <li>Mixing et mastering complets</li>
-                    <li>Prises et montages illimitÃ©s</li>
+                    <li>Prises et montages illimités</li>
                     <li>4 personnes incluses</li>
                 </ul>
-                <a href="#reservation" class="btn btn-primary" style="width: 100%;">RÃ©server 6h</a>
+                <a href="https://buy.stripe.com/test_placeholder_6h" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver 6h</a>
             </div>
 
             <div class="pricing-card">
-                <h3 class="pricing-title">Pack JournÃ©e ComplÃ¨te</h3>
-                <div class="pricing-amount">300â¬</div>
+                <h3 class="pricing-title">Pack Journée Complète</h3>
+                <div class="pricing-amount">300€</div>
                 <div class="pricing-duration">10 heures</div>
                 <ul class="pricing-features">
                     <li>10 heures de studio</li>
-                    <li>IngÃ©nieur du son dÃ©diÃ©</li>
+                    <li>Ingénieur du son dédié</li>
                     <li>Mixing et mastering complets</li>
-                    <li>Prises et montages illimitÃ©s</li>
+                    <li>Prises et montages illimités</li>
                     <li>4 personnes incluses</li>
                     <li>Consultation de projet</li>
                 </ul>
-                <a href="#reservation" class="btn btn-primary" style="width: 100%;">RÃ©server 10h</a>
+                <a href="https://buy.stripe.com/test_placeholder_10h" target="_blank" class="btn btn-primary" style="width: 100%;">Réserver 10h</a>
             </div>
         </div>
 
         <div class="pricing-note">
-            <i class="fas fa-info-circle"></i> Personne supplÃ©mentaire : +15â¬ | Paiement en ligne sÃ©curisÃ© par Stripe
+            <i class="fas fa-info-circle"></i> Personne supplémentaire : +15€ | Paiement en ligne sécurisé par Stripe
         </div>
 
         <!-- Post-Production Services -->
@@ -989,36 +1438,36 @@
             <div class="pricing-grid post-production-grid">
                 <div class="pricing-card post-production-card">
                     <h3 class="pricing-title">Mixage (Pistes WAV/MP3)</h3>
-                    <div class="pricing-amount">150â¬</div>
+                    <div class="pricing-amount">150€</div>
                     <div class="pricing-duration">par titre</div>
                     <ul class="pricing-features">
                         <li>Mixage professionnel</li>
                         <li>Pistes WAV et MP3</li>
-                        <li>Livraison format numÃ©rique</li>
+                        <li>Livraison format numérique</li>
                     </ul>
                     <a href="#contact" class="btn btn-primary" style="width: 100%;">Demander un devis</a>
                 </div>
 
                 <div class="pricing-card post-production-card">
                     <h3 class="pricing-title">Mixage (Stems)</h3>
-                    <div class="pricing-amount">250â¬</div>
+                    <div class="pricing-amount">250€</div>
                     <div class="pricing-duration">par titre</div>
                     <ul class="pricing-features">
                         <li>Mixage professionnel</li>
-                        <li>Pistes instruments sÃ©parÃ©es (stems)</li>
-                        <li>Rendu haute qualitÃ©</li>
+                        <li>Pistes instruments séparées (stems)</li>
+                        <li>Rendu haute qualité</li>
                     </ul>
                     <a href="#contact" class="btn btn-primary" style="width: 100%;">Demander un devis</a>
                 </div>
 
                 <div class="pricing-card post-production-card">
                     <h3 class="pricing-title">Mastering</h3>
-                    <div class="pricing-amount">100â¬</div>
+                    <div class="pricing-amount">100€</div>
                     <div class="pricing-duration">par titre</div>
                     <ul class="pricing-features">
                         <li>Mastering professionnel</li>
                         <li>Compatible tous supports</li>
-                        <li>Livraison format numÃ©rique</li>
+                        <li>Livraison format numérique</li>
                     </ul>
                     <a href="#contact" class="btn btn-primary" style="width: 100%;">Demander un devis</a>
                 </div>
@@ -1028,96 +1477,172 @@
 
     <!-- RESERVATION SECTION -->
     <section class="reservation" id="reservation">
-        <h2 class="section-title">RÃ©servez Votre Session</h2>
-        <form id="reservationForm">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="fullName">Nom Complet</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                    <span class="error-message">Veuillez entrer votre nom complet</span>
+        <h2 class="section-title">Réservez Votre Session</h2>
+        <div class="reservation-wrapper">
+            <form id="reservationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Nom Complet</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <span class="error-message">Veuillez entrer votre nom complet</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Numéro de Téléphone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message">Veuillez entrer un numéro de téléphone valide</span>
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="phone">NumÃ©ro de TÃ©lÃ©phone</label>
-                    <input type="tel" id="phone" name="phone" required>
-                    <span class="error-message">Veuillez entrer un numÃ©ro de tÃ©lÃ©phone valide</span>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message">Veuillez entrer une adresse email valide</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sessionType">Type de Session</label>
+                        <select id="sessionType" name="sessionType" required>
+                            <option value="">-- Sélectionner --</option>
+                            <option value="2h-70">2h - 70€</option>
+                            <option value="3h-105">3h - 105€</option>
+                            <option value="4h-140">4h - 140€</option>
+                            <option value="5h-175">5h - 175€</option>
+                            <option value="6h-210">6h - 210€</option>
+                            <option value="7h-245">7h - 245€</option>
+                            <option value="8h-280">8h - 280€</option>
+                            <option value="9h-315">9h - 315€</option>
+                            <option value="10h-300">10h - 300€ (Pack Journée)</option>
+                        </select>
+                        <span class="error-message">Veuillez sélectionner un type de session</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date Souhaitée</label>
+                        <input type="date" id="date" name="date" required>
+                        <span class="error-message">Veuillez sélectionner une date</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="timeSlot">Créneau Horaire</label>
+                        <select id="timeSlot" name="timeSlot" required>
+                            <option value="">-- Sélectionner --</option>
+                            <option value="10h-12h">10h00 - 12h00</option>
+                            <option value="12h-14h">12h00 - 14h00</option>
+                            <option value="14h-16h">14h00 - 16h00</option>
+                            <option value="16h-18h">16h00 - 18h00</option>
+                            <option value="18h-20h">18h00 - 20h00</option>
+                            <option value="20h-22h">20h00 - 22h00</option>
+                            <option value="22h-00h">22h00 - 00h00</option>
+                            <option value="00h-02h">00h00 - 02h00</option>
+                        </select>
+                        <span class="error-message">Veuillez sélectionner un créneau</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="people">Nombre de Personnes</label>
+                        <select id="people" name="people" required>
+                            <option value="">-- Sélectionner --</option>
+                            <option value="1-4">1-4 (inclus)</option>
+                            <option value="5">5 (+15€)</option>
+                            <option value="6">6 (+30€)</option>
+                            <option value="7">7 (+45€)</option>
+                        </select>
+                        <span class="error-message">Veuillez sélectionner le nombre de personnes</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Notes (Optionnel)</label>
+                    <textarea id="message" name="message" placeholder="Parlez-nous de votre projet..."></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Continuer vers le paiement</button>
+                <p class="form-note">Vous serez redirigé vers notre page de paiement sécurisée Stripe</p>
+            </form>
+
+            <!-- Order Summary Panel -->
+            <aside class="order-summary">
+                <h3>Résumé de votre réservation</h3>
+                <div id="summaryItems">
+                    <p class="summary-empty">Remplissez le formulaire pour voir le résumé</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">Questions Fréquentes</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Politique d'annulation</h4>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Les annulations peuvent être effectuées jusqu'à 48 heures avant votre session pour un remboursement complet. Les annulations avec moins de 48 heures d'avis sont soumises à des frais de 50%.</p>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                <span class="error-message">Veuillez entrer une adresse email valide</span>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="sessionType">Type de Session</label>
-                    <select id="sessionType" name="sessionType" required>
-                        <option value="">-- SÃ©lectionner (minimum 2h) --</option>
-                        <option value="2h-70">2h - 70â¬</option>
-                        <option value="3h-105">3h - 105â¬</option>
-                        <option value="4h-140">4h - 140â¬</option>
-                        <option value="5h-175">5h - 175â¬</option>
-                        <option value="6h-210">6h - 210â¬</option>
-                        <option value="7h-245">7h - 245â¬</option>
-                        <option value="8h-280">8h - 280â¬</option>
-                        <option value="9h-315">9h - 315â¬</option>
-                        <option value="10h-300">10h - 300â¬ (Pack JournÃ©e)</option>
-                    </select>
-                    <span class="error-message">Veuillez sÃ©lectionner un type de session</span>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Qu'apporter au studio ?</h4>
+                    <span class="faq-toggle">▼</span>
                 </div>
-                <div class="form-group">
-                    <label for="date">Date SouhaitÃ©e</label>
-                    <input type="date" id="date" name="date" required>
-                    <span class="error-message">Veuillez sÃ©lectionner une date</span>
+                <div class="faq-answer">
+                    <p>Apportez votre instrument principal et tout accessoire spécialisé. Notre studio est équipé de microphones, amplificateurs et interfaces professionnels. Si vous avez besoin d'équipement spécifique, contactez-nous avant votre réservation.</p>
                 </div>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="timeSlot">CrÃ©neau Horaire</label>
-                    <select id="timeSlot" name="timeSlot" required>
-                        <option value="">-- SÃ©lectionner --</option>
-                        <option value="10h-12h">10h00 - 12h00</option>
-                        <option value="12h-14h">12h00 - 14h00</option>
-                        <option value="14h-16h">14h00 - 16h00</option>
-                        <option value="16h-18h">16h00 - 18h00</option>
-                        <option value="18h-20h">18h00 - 20h00</option>
-                        <option value="20h-22h">20h00 - 22h00</option>
-                        <option value="22h-00h">22h00 - 00h00</option>
-                        <option value="00h-02h">00h00 - 02h00</option>
-                    </select>
-                    <span class="error-message">Veuillez sÃ©lectionner un crÃ©neau</span>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Stationnement</h4>
+                    <span class="faq-toggle">▼</span>
                 </div>
-                <div class="form-group">
-                    <label for="people">Nombre de Personnes</label>
-                    <select id="people" name="people" required>
-                        <option value="">-- SÃ©lectionner --</option>
-                        <option value="1-4">1-4 (inclus)</option>
-                        <option value="5">5 (+15â¬)</option>
-                        <option value="6">6 (+30â¬)</option>
-                        <option value="7">7 (+45â¬)</option>
-                    </select>
-                    <span class="error-message">Veuillez sÃ©lectionner le nombre de personnes</span>
+                <div class="faq-answer">
+                    <p>Notre studio dispose d'un parking privé gratuitement disponible pour tous nos clients. Vous pouvez également utiliser les parkings publics proches du bâtiment. L'accès se fait par l'Avenue du Général Leclerc.</p>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="message">Message / Notes (Optionnel)</label>
-                <textarea id="message" name="message" placeholder="Parlez-nous de votre projet..."></textarea>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Modifications de réservation</h4>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Vous pouvez modifier votre réservation jusqu'à 72 heures avant votre session en nous contactant directement. Cela inclut le changement de date, d'heure ou de type de session.</p>
+                </div>
             </div>
 
-            <button type="submit" class="form-submit">Confirmer et Payer</button>
-            <p class="form-note">Vous serez redirigÃ© vers notre page de paiement sÃ©curisÃ©e Stripe</p>
-        </form>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Options de paiement</h4>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Nous acceptons tous les modes de paiement via Stripe : cartes bancaires, portefeuilles numériques et plus. Vous pouvez également payer un acompte de 50€ et le reste sur place, ou payer l'intégrialité en avance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Accès 24h/24</h4>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Notre studio est ouvert 7 jours sur 7, de 10h00 à 06h00. Nous offrons une flexibilité maximale pour nos musiciens qui créent à toute heure. Les sessions de nuit ont les mêmes tarifs qu'en journée.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CUSTOM PACKAGE SECTION -->
     <section class="contact" style="padding-top: 4rem; border-top: 1px solid var(--border-color);">
-        <h2 class="section-title">Besoin de quelque chose de personnalisÃ© ?</h2>
-        <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 3rem; font-size: 1.05rem; line-height: 1.8;">Nous proposons des packages flexibles pour les projets plus importants, les enregistrements d'albums et les collaborations Ã  long terme.</p>
+        <h2 class="section-title">Besoin de quelque chose de personnalisé ?</h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 3rem; font-size: 1.05rem; line-height: 1.8;">Nous proposons des packages flexibles pour les projets plus importants, les enregistrements d'albums et les collaborations à long terme.</p>
         <div style="text-align: center;">
-            <a href="#contact" class="btn btn-primary">Nous contacter pour un devis personnalisÃ©</a>
+            <a href="#contact" class="btn btn-primary">Nous contacter pour un devis personnalisé</a>
         </div>
     </section>
 
@@ -1130,7 +1655,7 @@
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="contact-details">
                         <h3>Adresse</h3>
-                        <p>100 Avenue du GÃ©nÃ©ral Leclerc<br>93500 Pantin, France</p>
+                        <p>100 Avenue du Général Leclerc<br>93500 Pantin, France</p>
                     </div>
                 </div>
 
@@ -1147,6 +1672,14 @@
                     <div class="contact-details">
                         <h3>Horaires</h3>
                         <p>Ouvert 7j/7<br>10h00 - 06h00</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-details">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/33XXXXXXXXX?text=Bonjour%20je%20souhaite%20une%20r%C3%A9servation" target="_blank">Contactez-nous via WhatsApp</a></p>
                     </div>
                 </div>
 
@@ -1173,22 +1706,38 @@
     <footer>
         <div class="footer-container">
             <div class="footer-copyright">
-                Â© 2025 318 LEGAACY STUDIO. Tous droits rÃ©servÃ©s.
+                © 2025 318 LEGAACY STUDIO. Tous droits réservés.
             </div>
             <div class="footer-links">
-                <a href="#privacy">Politique de ConfidentialitÃ©</a>
-                <a href="#terms">Conditions GÃ©nÃ©rales</a>
+                <a href="#privacy">Politique de Confidentialité</a>
+                <a href="#terms">Conditions Générales</a>
                 <a href="#refund">Politique de Remboursement</a>
             </div>
         </div>
     </footer>
 
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/33XXXXXXXXX?text=Bonjour%20318%20LEGAACY%20STUDIO%2C%20je%20souhaite%20une%20r%C3%A9servation" target="_blank" class="whatsapp-button" title="Contactez-nous sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- CONFIRMATION MODAL -->
     <div class="confirmation-modal" id="confirmationModal">
         <div class="confirmation-content">
-            <h2>â RÃ©servation ConfirmÃ©e!</h2>
-            <p>Merci de votre rÃ©servation. Un email de confirmation avec les dÃ©tails de votre session a Ã©tÃ© envoyÃ© Ã  votre adresse email. Vous serez redirigÃ© vers le paiement sÃ©curisÃ© Stripe.</p>
-            <button class="confirmation-close" onclick="closeConfirmation()">Fermer</button>
+            <h2>✓ Réservation Confirmée!</h2>
+            <p>Merci de votre réservation. Voici les détails de votre session :</p>
+            <div class="confirmation-details">
+                <p><strong>Session :</strong> <span id="confirmSessionType"></span></p>
+                <p><strong>Date :</strong> <span id="confirmDate"></span></p>
+                <p><strong>Heure :</strong> <span id="confirmTime"></span></p>
+                <p><strong>Personnes :</strong> <span id="confirmPeople"></span></p>
+                <p><strong>Total à payer :</strong> <span id="confirmTotal"></span></p>
+            </div>
+            <p>Un email de confirmation a été envoyé à votre adresse email. Vous allez maintenant être redirigé vers le paiement sécurisé Stripe.</p>
+            <div class="confirmation-buttons">
+                <a href="" id="stripeLink" class="confirmation-stripe">Aller au paiement Stripe</a>
+                <button class="confirmation-close" onclick="closeConfirmation()">Fermer</button>
+            </div>
         </div>
     </div>
 
@@ -1207,6 +1756,25 @@
             }
 
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // ==================== MOBILE HAMBURGER MENU ====================
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const nav = document.getElementById('nav');
+
+        hamburgerMenu.addEventListener('click', function() {
+            hamburgerMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('show');
+            });
         });
 
         // ==================== FORM VALIDATION ====================
@@ -1261,6 +1829,84 @@
                 clearError(this);
             }
         });
+
+        // ==================== DYNAMIC PRICE CALCULATOR ====================
+        function updateOrderSummary() {
+            const sessionType = sessionTypeSelect.value;
+            const date = dateInput.value;
+            const timeSlot = timeSlotSelect.value;
+            const people = peopleSelect.value;
+
+            const summaryContainer = document.getElementById('summaryItems');
+
+            if (!sessionType || !date || !timeSlot || !people) {
+                summaryContainer.innerHTML = '<p class="summary-empty">Remplissez le formulaire pour voir le résumé</p>';
+                return;
+            }
+
+            // Parse session details
+            const [hours, price] = sessionType.split('-');
+            let basePrice = parseInt(price);
+
+            // Calculate extra people cost
+            let extraCost = 0;
+            if (people === '5') extraCost = 15;
+            else if (people === '6') extraCost = 30;
+            else if (people === '7') extraCost = 45;
+
+            const totalPrice = basePrice + extraCost;
+
+            // Format date
+            const dateObj = new Date(date);
+            const dateFormatted = dateObj.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+            // Get people count display
+            let peopleDisplay = people;
+            if (people === '1-4') peopleDisplay = '1-4 (inclus)';
+
+            summaryContainer.innerHTML = `
+                <div class="summary-item">
+                    <span>Session :</span>
+                    <span>${hours} - ${basePrice}€</span>
+                </div>
+                <div class="summary-item">
+                    <span>Date :</span>
+                    <span>${dateFormatted}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Horaire :</span>
+                    <span>${timeSlot}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Personnes :</span>
+                    <span>${peopleDisplay}</span>
+                </div>
+                ${extraCost > 0 ? `<div class="summary-item">
+                    <span>Personnes supplémentaires :</span>
+                    <span>+${extraCost}€</span>
+                </div>` : ''}
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span>${totalPrice}€</span>
+                </div>
+                <div class="payment-options">
+                    <h4>Mode de paiement</h4>
+                    <div class="payment-option">
+                        <input type="radio" id="payFull" name="paymentMethod" value="full" checked>
+                        <label for="payFull">Payer intégralement (${totalPrice}€)</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="payDeposit" name="paymentMethod" value="deposit">
+                        <label for="payDeposit">Acompte de 50€, reste sur place</label>
+                    </div>
+                </div>
+            `;
+        }
+
+        sessionTypeSelect.addEventListener('change', updateOrderSummary);
+        dateInput.addEventListener('change', updateOrderSummary);
+        timeSlotSelect.addEventListener('change', updateOrderSummary);
+        peopleSelect.addEventListener('change', updateOrderSummary);
 
         // ==================== FORM SUBMISSION ====================
         form.addEventListener('submit', function(e) {
@@ -1319,22 +1965,60 @@
             }
 
             if (isValid) {
-                // Show confirmation modal
-                showConfirmation();
+                // Get payment method
+                const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
 
-                // In production, this would redirect to Stripe payment link
-                // window.location.href = 'https://buy.stripe.com/your-link';
+                // Prepare Stripe link based on session type
+                const sessionType = sessionTypeSelect.value;
+                let stripeLink = '';
+
+                if (sessionType.includes('2h')) {
+                    stripeLink = 'https://buy.stripe.com/test_placeholder_2h';
+                } else if (sessionType.includes('3h')) {
+                    stripeLink = 'https://buy.stripe.com/test_placeholder_3h';
+                } else if (sessionType.includes('6h')) {
+                    stripeLink = 'https://buy.stripe.com/test_placeholder_6h';
+                } else if (sessionType.includes('10h')) {
+                    stripeLink = 'https://buy.stripe.com/test_placeholder_10h';
+                } else {
+                    // For other durations, use the 3h link as default
+                    stripeLink = 'https://buy.stripe.com/test_placeholder_3h';
+                }
+
+                // Show confirmation modal
+                showConfirmation(sessionType, dateInput.value, timeSlotSelect.value, peopleSelect.value, paymentMethod, stripeLink);
 
                 // Reset form after 3 seconds
                 setTimeout(() => {
                     form.reset();
+                    updateOrderSummary();
                 }, 2000);
             }
         });
 
         // ==================== CONFIRMATION MODAL ====================
-        function showConfirmation() {
+        function showConfirmation(sessionType, date, time, people, paymentMethod, stripeLink) {
             const modal = document.getElementById('confirmationModal');
+            const dateObj = new Date(date);
+            const dateFormatted = dateObj.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+            const [hours, price] = sessionType.split('-');
+            let basePrice = parseInt(price);
+            let extraCost = 0;
+            if (people === '5') extraCost = 15;
+            else if (people === '6') extraCost = 30;
+            else if (people === '7') extraCost = 45;
+
+            let peopleDisplay = people === '1-4' ? '1-4 (inclus)' : people;
+            const totalPrice = basePrice + extraCost;
+
+            document.getElementById('confirmSessionType').textContent = `${hours} - ${basePrice}€`;
+            document.getElementById('confirmDate').textContent = dateFormatted;
+            document.getElementById('confirmTime').textContent = time;
+            document.getElementById('confirmPeople').textContent = peopleDisplay;
+            document.getElementById('confirmTotal').textContent = paymentMethod === 'deposit' ? '50€ (acompte)' : totalPrice + '€';
+            document.getElementById('stripeLink').href = stripeLink;
+
             modal.classList.add('show');
         }
 
@@ -1349,6 +2033,24 @@
                 closeConfirmation();
             }
         });
+
+        // ==================== FAQ ACCORDION ====================
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const question = element;
+
+            // Close all other FAQs
+            document.querySelectorAll('.faq-question').forEach(q => {
+                if (q !== question) {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('show');
+                }
+            });
+
+            // Toggle current FAQ
+            question.classList.toggle('active');
+            answer.classList.toggle('show');
+        }
 
         // ==================== INTERSECTION OBSERVER FOR ANIMATIONS ====================
         const observerOptions = {
@@ -1366,12 +2068,9 @@
         }, observerOptions);
 
         // Observe service cards and pricing cards
-        document.querySelectorAll('.service-card, .pricing-card').forEach(el => {
+        document.querySelectorAll('.service-card, .pricing-card, .faq-item, .step').forEach(el => {
             observer.observe(el);
         });
-
-        // ==================== MOBILE MENU (if needed for smaller screens) ====================
-        // This is a foundation for future mobile menu implementation
     </script>
 </body>
 </html>
